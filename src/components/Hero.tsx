@@ -32,7 +32,7 @@ export function Hero({ c }: Props) {
             />
             <div className="absolute inset-[6px] overflow-hidden rounded-full bg-bg-card">
               <Image
-                src="/photo.jpg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/photo.jpg`}
                 alt={c.hero.photoAlt}
                 fill
                 priority
