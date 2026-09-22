@@ -1,23 +1,10 @@
 import type { ReactNode } from 'react';
-import { Inter, Unbounded } from 'next/font/google';
+import { fontVars } from '@/lib/fonts';
 import '../globals.css';
-
-const inter = Inter({
-  subsets: ['latin', 'cyrillic'],
-  display: 'swap',
-  variable: '--font-inter',
-});
-
-const unbounded = Unbounded({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['500', '600', '700'],
-  display: 'swap',
-  variable: '--font-unbounded',
-});
 
 export default function EnRootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${unbounded.variable}`}>
+    <html lang="en" className={fontVars}>
       <body className="min-h-screen font-sans antialiased">{children}</body>
     </html>
   );
