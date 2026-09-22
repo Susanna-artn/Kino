@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html,
+  body {
+    background-color: theme('colors.bg.base');
+    color: theme('colors.ink.DEFAULT');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection {
+    background: theme('colors.accent.soft');
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
+  }
+  .section-band {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  .thin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.line') transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar {
+    height: 8px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: theme('colors.line');
+    border-radius: 999px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.accent.DEFAULT');
+  }
+  .card {
+    @apply rounded-card border border-line bg-bg-card shadow-card;
+  }
+  .card-alt {
+    @apply rounded-card border border-line bg-bg-alt;
+  }
+}
